@@ -31,6 +31,3 @@ class trapeze:
 
 sqr = square(10)
 print("Pole to", sqr.obwod)
-
-if __name__ = "__main__":
-    
