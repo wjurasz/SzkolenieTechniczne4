@@ -1,8 +1,8 @@
 # Zad. 7. Stwórz klasę i wykorzystaj wbudowane dekoratory: staticmethod, classmethod, property.
 # Przetestuj składniki na obiektach.
 
-from decorators import trycatch,timer,singleton
-
+from decorators import trycatch, timer, singleton
+from log_calls import log, log_calls
 
 class Car:
 
@@ -12,6 +12,7 @@ class Car:
         Car.carCount += 1
 
     @staticmethod
+    @log
     @trycatch
     @timer
     @singleton
@@ -19,6 +20,7 @@ class Car:
         print("Pamiętaj o przeglądzie samochodu")
 
     @classmethod
+    @log
     @trycatch
     @timer
     @singleton
@@ -26,6 +28,7 @@ class Car:
         return f'Aktualnie jest {cls.carCount} samochodów.'
     
     @property
+    @log
     @trycatch
     @timer
     @singleton
