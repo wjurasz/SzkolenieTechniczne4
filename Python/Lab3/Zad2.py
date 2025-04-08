@@ -1,7 +1,8 @@
 # Zad. 2. Stwórz funkcję do obliczania np. średniej dwóch liczb. Utwórz i dodaj do niej dekorator,
 # który wypisze jakie argumenty zostały dostarczone do funkcji, celem weryfikacji wyniku
 from time import time
-from multiprocessing import multiprocessing
+from multiprocessing import Process  # lub inna konkretna klasa/funkcja
+
 
 num1 = 4
 num2 = 5
@@ -15,7 +16,6 @@ def dekorator(func):
     return wrapper
 
 def timer(func):
-    
     def wrapper(*args, **kwargs):
         t1 = time()
         result = func(*args,**kwargs)
@@ -26,17 +26,16 @@ def timer(func):
     return wrapper
         
 
+# Zad. 3. Stwórz kolejny dekorator, który zmierzy czas wykonania funkcji (można użyć moduł `time`)
+
 @timer
 @dekorator
-def calc(num1,num2,num):
-    result = num1*num2 / num3
-    time.sleep(2)
+def calc(num1, num2, num3):
+    import time
+    result = num1 * num2 / num3
+    time.sleep(1)
     print(f'Wynik: {result}')
     return result
 
 calc(num1,num2,num3)
-
-
   
-
-# Zad. 3. Stwórz kolejny dekorator, który zmierzy czas wykonania funkcji (można użyć moduł `time`)
