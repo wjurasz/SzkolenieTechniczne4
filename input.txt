@@ -1,0 +1,5 @@
+To jest pierwsza linia.
+druga linia jest tutaj.
+Trzecia LINIA zawiera MIX wielkości.
+czwarta linia.
+OSTATNIA linia w pliku.
